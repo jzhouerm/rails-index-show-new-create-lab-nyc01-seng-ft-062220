@@ -5,3 +5,11 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+Coupon.destroy_all 
+puts "seeds destroyed..."
+
+10.times do
+Coupon.create({coupon_code: Faker::IDNumber.valid, store: Faker::Restaurant.name})
+end
+
+puts "New coupons created..."
